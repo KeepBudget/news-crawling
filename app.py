@@ -4,7 +4,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 app = Flask(__name__)
 
-from src.property.service import savedPropertyNews
+from src.property.service import savePropertyNews
 from src.accident.service import saveAccidentNews
 
 def getPreviousDateNews():
@@ -12,7 +12,7 @@ def getPreviousDateNews():
   previousDate = currentDate - timedelta(days=1)
   previousDateStr = previousDate.strftime("%Y년 %m월 %d일")
   print(f'{previousDateStr}의 뉴스 크롤링 시작')
-  savedPropertyNews(previousDate, previousDateStr)
+  savePropertyNews(previousDate, previousDateStr)
   saveAccidentNews(previousDate, previousDateStr)
   print(f'{previousDateStr}의 뉴스 저장 완료')
   

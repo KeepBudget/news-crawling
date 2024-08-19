@@ -8,7 +8,7 @@ from district.service import getDistrics, addDistrictToNewsList
 from property.sentiment import addSentimentsToNewsList
 from property.repository import saveNews
 
-def savedPropertyNews(date, dateStr):
+def savePropertyNews(date, dateStr):
   # id1 = 101(경제) & id2 = 260(부동산)
   crawledNews = newsCrawling(date, 101, 260)
   numCrawledNews = len(crawledNews)
